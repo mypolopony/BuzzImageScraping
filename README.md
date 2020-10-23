@@ -1,5 +1,5 @@
 # Google Image Scraping 
-# with Celery and Selenium
+## with Celery and Selenium
 
 ### Problem Statement
 The predictive power of an image-based machine-learning system, like all ML endeavours, relies heavily on both the quantity and quality of training data. As Google Images is an obvious source of imagery, it has long been a target for scrapers.
