@@ -24,11 +24,11 @@ Celery is a Python Task-Queue system that handle distribution of tasks on worker
 
 The relevant pieces of the project are as follows:
 
-`celery.py` simply initializes the application and connects to the (RabbitMQ) broker. It also brings the worker tasks into scope.
-`chromedriver` is the aformentioned pseudobrowser (Chrome version and archicecture specific, available [https://sites.google.com/a/chromium.org/chromedriver/downloads], mine is precompiled for `Version 86.0.4240.22` on `MacOS 64-bit`)
-`scraper.py` is the main image-finding script. It iterates through the targets, scrolls though Google Images, picks out and resolves the image URIs and then creates a task that is sent to the broker for pickup by the workers
-`targets.txt` is a file holding desired keywords
-`tasks.py` is the worker's scope. As designed, this is the only file accessible to the workers and so their `task`, i.e. downloading an image given a URI, is defined here
+- `celery.py` simply initializes the application and connects to the (RabbitMQ) broker. It also brings the worker tasks into scope.
+- `chromedriver` is the aformentioned pseudobrowser (Chrome version and archicecture specific, available [https://sites.google.com/a/chromium.org/chromedriver/downloads], mine is precompiled for `Version 86.0.4240.22` on `MacOS 64-bit`)
+- `scraper.py` is the main image-finding script. It iterates through the targets, scrolls though Google Images, picks out and resolves the image URIs and then creates a task that is sent to the broker for pickup by the workers
+- `targets.txt` is a file holding desired keywords
+- `tasks.py` is the worker's scope. As designed, this is the only file accessible to the workers and so their `task`, i.e. downloading an image given a URI, is defined here
 
 ### Output
 See the `images` folder generated after a quick run of the program
