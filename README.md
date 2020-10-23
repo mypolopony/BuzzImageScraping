@@ -1,5 +1,4 @@
-# Google Image Scraping 
-## with Celery and Selenium
+# Google Image Scraping with Celery and Selenium
 
 ### Problem Statement
 The predictive power of an image-based machine-learning system, like all ML endeavours, relies heavily on both the quantity and quality of training data. As Google Images is an obvious source of imagery, it has long been a target for scrapers.
@@ -19,7 +18,7 @@ Multithreading is an option but here we use Celery, an asynchronous message queu
 
 The URI-finding primary program will use a pseudobrowser (also called web driver) that acts just like a real browser and can emulate all of the actions a real user might use. In the old days, we could navigate programatically using `requests` and `urllib` but because Google Image results utilize an infinite scroll, it's necessary to "interact" with the site using the more heavy-handed web driver. 
 
-### Setup
+### Project Description
 Celery is a Python Task-Queue system that handle distribution of tasks on workers across threads or network nodes. The application pushes messages (in this case, image URIs) to a broker (in this case, RabbitMQ) and Celery workers will pop them and schedule task execution.
 
 The relevant pieces of the project are as follows:
